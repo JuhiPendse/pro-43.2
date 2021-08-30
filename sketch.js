@@ -11,7 +11,9 @@ var peel, peelImg;
 
 var powerPunch, powerPunchImg,bgImg;
 
-var boxer1,boxer1Img,boxer2,boxer2Img;
+var boxer1,boxer1Img,boxer2,boxer2Img,boxers;
+
+var boxer1RightPunch,boxer1LeftPunch,boxer2RightPunch,boxer2LeftPunch;
 
 function preload(){
   bgImg = loadImage("images/bg_img.jpg");
@@ -19,6 +21,10 @@ function preload(){
   powerPunchImg = loadImage("images/power_punch.jpg")
   boxer1Img = loadImage("images/boxer_1.png")
   boxer2Img = loadImage("images/boxer_2.png")
+  boxer1RightPunch = loadImage("images/boxer_1_punching_right.png")
+  boxer2RightPunch = loadImage("images/boxer_2_punching_right.png")
+  boxer1LeftPunch = loadImage("images/boxer_1_punching_left.png")
+  boxer2LeftPunch = loadImage("images/boxer_2_punching_left.png")
 }
 
 function setup() {
@@ -32,12 +38,21 @@ function setup() {
 }
 
 function draw() {
-
+  
   if(playerCount === 2){
+    
+
     game.update(1);
   }
+  
   if(gameState === 1){
     clear();
     game.play();
+    console.log("hi")
+  }
+ 
+
+  if(gameState === 2){
+    game.end();
   }
 }

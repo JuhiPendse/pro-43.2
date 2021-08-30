@@ -20,7 +20,7 @@ class Game {
       player = new Player();
       var playerCountRef = await database.ref('playerCount').once("value");
       if(playerCountRef.exists()){
-        playerCount = playerCount.val();
+        playerCount = playerCountRef.val();
         player.getCount();
       }
       form = new Form()
@@ -61,14 +61,16 @@ class Game {
         fill("red")
         ellipse(x,y,60,60)
       }
-
+      drawSprites()
     }
 
-    if(keyIsDown("D") && player.index !== null){
-      player.x+=1
-      player.update()
-    }
+    // if(keyIsDown("D") && player.index !== null){
+    //   player.x+=1
+    //   player.update()
+    // }
 
-    drawSprites();
   }
+
+  
+
 }
