@@ -37,6 +37,8 @@ class Form {
     this.reset.mousePressed(()=>{
       player.updateCount(0);
       player.update(0)
+      gameState.update(0)
+      gameState = 0;
     })
 
   }

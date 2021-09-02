@@ -11,7 +11,9 @@ var peel, peelImg;
 
 var powerPunch, powerPunchImg,bgImg;
 
-var boxer1,boxer1Img,boxer2,boxer2Img,boxers;
+var boxer1,boxer1Img,boxer2,boxer2Img;
+
+var boxers=[];
 
 var boxer1RightPunch,boxer1LeftPunch,boxer2RightPunch,boxer2LeftPunch;
 
@@ -33,23 +35,22 @@ function setup() {
   game = new Game();
   game.getState()
   game.start();
-  
 
 }
 
 function draw() {
   
   if(playerCount === 2){
-    
-
+    gameState = 1;
     game.update(1);
   }
   
   if(gameState === 1){
     clear();
     game.play();
-    console.log("hi")
+    
   }
+ 
  
 
   if(gameState === 2){
